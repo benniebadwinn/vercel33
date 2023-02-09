@@ -2,6 +2,10 @@
     "version": 2,
     "builds":[
         {
+            "src": "requirements.txt",
+            "use": "@vercel/pip"
+          },
+        {
             "src":"myshop/wsgi.py",
             "use":"@vercel/python",
             "config": {
@@ -18,6 +22,10 @@
         }
     ],
     "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "http://localhost:${VERCEL_PORT}"
+          },
         {
             "src":"/static/(.*)",
             "dest":"/static/$1"  
