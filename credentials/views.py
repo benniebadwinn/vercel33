@@ -42,7 +42,7 @@ def register (request):
                  return redirect('register')
          else:
      
-            user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email,)
+            user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password2,)
             user.save()
             messages.info(request, 'Your Account Has Been Succesfully Created')
             return redirect('login')
@@ -59,3 +59,6 @@ def register (request):
 def logout (request):
             auth.logout(request)
             return redirect('/')
+
+def forgot (request):
+    return render(request, 'forgot.html')
