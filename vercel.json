@@ -9,9 +9,7 @@
                 "runtime": "python3.9"
                      }
         },
-        {  
-    "cleanUrls": true
-        },
+     
         {
             "src": "builds.sh",
             "use": "@vercel/static-build",
