@@ -8,25 +8,12 @@
                 "maxLamdasize": "15mb", 
                 "runtime": "python3.9"
                      }
-        },
-<<<<<<< HEAD
-     
-=======
-      
->>>>>>> 4e7346260fcc123c1f3bfeb1b9cd5d5b6ddd554e
-        {
-            "src": "builds.sh",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "static-build"
-            }
         }
+
+      
     ],
     "routes": [
-        {
-            "src":"/static/(.*)",
-            "dest":"/static/$1"  
-        },
+       
         {
             "src":"/(.*)",
             "dest":"myshop/wsgi.py"
