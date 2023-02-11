@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-import dj_database_url
+# import dj_database_url
 from decouple import config
 from pathlib import Path
 
@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-zt%*_z!5y)1jzs8uxo-=ma^skbn0&(mmn+&_-wifr!6un4teoi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.verce.app']
+ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'badwinshop',
     'credentials',
-    'djongo',
+    
 ]
 
 MIDDLEWARE = [
@@ -99,8 +100,8 @@ DATABASES = {
             }  
         }
 }
-
-DATABASES ['default'] = dj_database_url.config()
+# 'host': 'mongodb+srv://luckypatcher:luckyp@tch3r@cluster0.p8bwubu.mongodb.net/test'
+# DATABASES ['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -136,13 +137,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# STATIC_URL = 'static/'
+# STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# # STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT =    os.path.join(BASE_DIR, 'mediafiles')
 STATIC_URL = 'static/'
-STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
+# BASE_DIR = os.path.join(os.path.dirname(__file__))
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR), "staticfiles")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT =    os.path.join(BASE_DIR, 'mediafiles')
+MEDIA_ROOT = os.path.join( os.path.join(BASE_DIR), "media")
 
 
 
