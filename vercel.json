@@ -9,7 +9,11 @@
                 "runtime": "python3.9"
                      }
         },
+<<<<<<< HEAD
      
+=======
+      
+>>>>>>> 4e7346260fcc123c1f3bfeb1b9cd5d5b6ddd554e
         {
             "src": "builds.sh",
             "use": "@vercel/static-build",
