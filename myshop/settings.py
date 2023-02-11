@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-zt%*_z!5y)1jzs8uxo-=ma^skbn0&(mmn+&_-wifr!6un4teoi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
@@ -136,20 +136,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-# STATIC_URL = 'static/'
-# STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# # STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT =    os.path.join(BASE_DIR, 'mediafiles')
 STATIC_URL = 'static/'
-# BASE_DIR = os.path.join(os.path.dirname(__file__))
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-# STATIC_ROOT = os.path.join(os.path.join(BASE_DIR), "staticfiles")
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# # STATIC_ROOT = BASE_DIR / "staticfiles_build" / "static"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join( os.path.join(BASE_DIR), "media")
