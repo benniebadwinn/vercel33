@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-import dj_database_url
 from decouple import config
 from pathlib import Path
 
@@ -32,8 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app']
 # ALLOWED_HOSTS = []
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,15 +81,6 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'myshop',
-#     }
-# }
-
 DATABASES = {
         'default': {
             'ENGINE': 'djongo',
@@ -101,8 +91,6 @@ DATABASES = {
         }
 }
 
-# 'host': 'mongodb+srv://luckypatcher:luckyp@tch3r@cluster0.p8bwubu.mongodb.net/test'
-# DATABASES = {"default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -140,14 +128,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join( os.path.join(BASE_DIR), "media")
-
-
-
 
 
 # Default primary key field type
