@@ -18,7 +18,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASE_URL = "mongodb://mongo:DeX5sdmEvlVCaR7o7zPP@containers-us-west-111.railway.app:6527"
+# DATABASE_URL = "mongodb://mongo:DeX5sdmEvlVCaR7o7zPP@containers-us-west-111.railway.app:6527"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -27,10 +27,10 @@ DATABASE_URL = "mongodb://mongo:DeX5sdmEvlVCaR7o7zPP@containers-us-west-111.rail
 SECRET_KEY = 'django-insecure-zt%*_z!5y)1jzs8uxo-=ma^skbn0&(mmn+&_-wifr!6un4teoi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# ALLOWED_HOSTS = ['.vercel.app']
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhitenoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -103,7 +102,7 @@ DATABASES = {
 }
 
 # 'host': 'mongodb+srv://luckypatcher:luckyp@tch3r@cluster0.p8bwubu.mongodb.net/test'
-DATABASES = {"default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),}
+# DATABASES = {"default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

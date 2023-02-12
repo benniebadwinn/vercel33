@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds":[
+        {
+            "src":"myshop/wsgi.py", "use":"@vercel/python", 
+            "config": {
+                "maxLamdasize": "15mb", "runtime": "python3.9"
+                      }
+        },
+        {
+            "src": "builds.sh",
+            "use": "@vercel/static-build",
+            "config": 
+        {
+            "distDir": "static-build"
+        }
+        }
+],
+            "routes": 
+            [
+            
+                {
+             "src":"/(.*)",
+             "dest":"myshop/wsgi.py"
+               }
+            ]
+}
